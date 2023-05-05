@@ -103,11 +103,22 @@ function compute(nextOp) {
 
 
 //displays the results on the calculator screen
-numbers.forEach((number) => { 
-    number.addEventListener("click", (e) => {
-        display  += number.textContent; 
+function displayResults() {
+    if(this.textContent == ".") {
+        if(!resultValue.textContent.includes('.') && this.textContent == ".") {
+            display  += this.textContent; 
+            resultValue.textContent = display; 
+        }
+    }
+    else {
+        display  += this.textContent; 
         resultValue.textContent = display; 
-    })
+    }
+}
+
+//Handles number click
+numbers.forEach((number) => { 
+    number.addEventListener("click", displayResults)
 })
 
 
@@ -118,6 +129,7 @@ operators.forEach((operator) => {
         operatorsArr.push(operator.textContent);
         doesNumberArrHaveAnInitialValue();
         const nextOp = operatorsArr[1];
+
         compute(nextOp);
         display = "";
     })
