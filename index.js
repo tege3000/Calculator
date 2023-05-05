@@ -95,7 +95,7 @@ function compute(nextOp) {
         clearArrayStorage();
     }
 
-    if(operatorsArr[0] == 'C' || nextOp == 'C') {
+    if(operatorsArr[0] == 'AC' || nextOp == 'AC') {
         resultValue.textContent = "";
         clearArrayStorage();
     }

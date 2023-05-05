@@ -36,7 +36,8 @@ button {
     font-weight: bold;
     font-size: 20px;
     width: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 button:hover {
