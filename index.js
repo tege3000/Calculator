@@ -96,14 +96,16 @@ function compute(nextOp) {
     }
 
     if(operatorsArr[0] == 'AC' || nextOp == 'AC') {
-        resultValue.textContent = "";
+        resultValue.textContent = "0";
         clearArrayStorage();
     }
 }
 
 
 //displays the results on the calculator screen
+//NOTE: this - number object
 function displayResults() {
+
     if(this.textContent == ".") {
         if(!resultValue.textContent.includes('.') && this.textContent == ".") {
             display  += this.textContent; 
@@ -112,7 +114,8 @@ function displayResults() {
     }
     else {
         display  += this.textContent; 
-        resultValue.textContent = display; 
+
+        resultValue.textContent = (Number(display)).toString(); 
     }
 }
 
